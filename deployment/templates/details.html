@@ -3,16 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Loan predictor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;800&display=swap" rel="stylesheet">
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/css/uikit.min.css" />
+    <style>
+        font-family: 'Poppins', sans-serif !important;
+    </style>
 </head>
 <body>
-    <div class="uk-container">
-        <h1 class="uk-heading-small">Applicant details</h1>
+    <div class="uk-container uk-margin-large-top uk-margin-large-bottom uk-card uk-card-default uk-card-body">
+        <h1 class="uk-heading-small uk-text-bold uk-text-primary">Applicant details</h1>
         <form action="{{ url_for('predict')}}"method="POST">
 
 
-        <legend class="uk-legend">Legend</legend>
+        <legend class="uk-legend">Please enter your details</legend>
 
         <div class="uk-margin">
             <input class="uk-input" name="Age" type="text" placeholder="Age">
@@ -30,7 +36,7 @@
             </select>
         </div>
 
-        <label class="uk-form-label">Type of employment</label>
+        <label class="uk-form-label">Select your type of employment</label>
         <div class="uk-margin">
             <select class="uk-select" name="Type of employment">
                 <option value="Sales staff">Sales staff</option>
@@ -55,7 +61,7 @@
             </select>
         </div>
 
-        <label class="uk-form-label">Location</label>
+        <label class="uk-form-label">Location type</label>
         <div class="uk-margin">
             <select class="uk-select" name="Location">
                 <option value="Urban">Urban</option>
@@ -96,7 +102,7 @@
             <input class="uk-input" type="text" name="No. of Defaults" placeholder="No. of Defaults">
         </div>
 
-        <label class="uk-form-label">Has Active Credit Card</label>
+        <label class="uk-form-label">Do you have an active credit card?</label>
         <div class="uk-margin">
             <select class="uk-select" name="Has Active Credit Card">
                 <option value="Active">Active</option>
@@ -105,7 +111,7 @@
             </select>
         </div>
 
-        <label class="uk-form-label">Property Location</label>
+        <label class="uk-form-label">Property location type</label>
         <div class="uk-margin">
             <select class="uk-select" name="Property Location">
                 <option value="Urban">Urban</option>
@@ -122,30 +128,7 @@
             <input class="uk-input" type="text" name="Property Price" placeholder="Property Price">
         </div>
 
-
-
-
-
-        <!--div class="uk-margin">
-            <textarea class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
-        </div>
-
-        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-            <label><input class="uk-radio" type="radio" name="radio2" checked> A</label>
-            <label><input class="uk-radio" type="radio" name="radio2"> B</label>
-        </div>
-
-        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-            <label><input class="uk-checkbox" type="checkbox" checked> A</label>
-            <label><input class="uk-checkbox" type="checkbox"> B</label>
-        </div>
-
-        <div-- class="uk-margin">
-            <input class="uk-range" type="range" value="2" min="0" max="10" step="0.1">
-        </div-->
-
-
-            <button type="submit" class="uk-button uk-button-default">Submit</button>
+            <button type="submit" class="uk-button uk-button-default uk-button-primary">Predict the loan amount</button>
 </form>
     </div>
 
