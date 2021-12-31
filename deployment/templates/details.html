@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan predictor</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/css/uikit.min.css" />
+</head>
+<body>
+    <div class="uk-container">
+        <h1 class="uk-heading-small">Applicant details</h1>
+        <form action="{{ url_for('predict')}}"method="POST">
+
+
+        <legend class="uk-legend">Legend</legend>
+
+        <div class="uk-margin">
+            <input class="uk-input" name="Age" type="text" placeholder="Age">
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" name="Income (USD)" type="text" placeholder="Income in USD">
+        </div>
+
+        <label class="uk-form-label">Income Stability</label>
+        <div class="uk-margin">
+            <select class="uk-select" name="Income Stability">
+                <option value="Low">Low</option>
+                <option value="High">High</option>
+            </select>
+        </div>
+
+        <label class="uk-form-label">Type of employment</label>
+        <div class="uk-margin">
+            <select class="uk-select" name="Type of employment">
+                <option value="Sales staff">Sales staff</option>
+                <option value="High skill tech staff">High skill tech staff</option>
+                <option value="HR staff">HR staff</option>
+                <option value="IT staff">IT staff</option>
+                <option value="Secretaries">Secretaries</option>
+                <option value="Laborers">Laborers</option>
+                <option value="Managers">Managers</option>
+                <option value="Cooking staff">Cooking staff</option>
+                <option value="Core staff">Core staff</option>
+                <option value="Drivers">Drivers</option>
+                <option value="Realty agents">Realty agents</option>
+                <option value="Security staff">Security staff</option>
+                <option value="Accountants">Accountants</option>
+                <option value="Private service staff">Private service staff</option>
+                <option value="Waiters/barmen staff">Waiters/barmen staff</option>
+                <option value="Medicine staff">Medicine staff</option>
+                <option value="Cleaning staff">Cleaning staff</option>
+                <option value="Low-skill Laborers">Low-skill Laborers</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+
+        <label class="uk-form-label">Location</label>
+        <div class="uk-margin">
+            <select class="uk-select" name="Location">
+                <option value="Urban">Urban</option>
+                <option value="Semi-Urban">Semi-Urban</option>
+                <option value="Rural">Rural</option>
+            </select>
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" name="Loan Amount Request (USD)" type="text" placeholder="Loan Amount Request (USD)">
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="Current Loan Expenses (USD)" name="Current Loan Expenses (USD)">
+        </div>
+
+        <label class="uk-form-label">Expense Type 1</label>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+            <label><input class="uk-radio" type="radio" name="Expense Type 1">Yes</label>
+            <label><input class="uk-radio" type="radio" name="Expense Type 1">No</label>
+        </div>
+
+        <label class="uk-form-label">Expense Type 2</label>
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+            <label><input class="uk-radio" type="radio" name="Expense Type 2">Yes</label>
+            <label><input class="uk-radio" type="radio" name="Expense Type 2">No</label>
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" name="Dependents" placeholder="Dependents">
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" name="Credit Score" placeholder="Credit Score">
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" name="No. of Defaults" placeholder="No. of Defaults">
+        </div>
+
+        <label class="uk-form-label">Has Active Credit Card</label>
+        <div class="uk-margin">
+            <select class="uk-select" name="Has Active Credit Card">
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+                <option value="Unpossessed">Unpossessed</option>
+            </select>
+        </div>
+
+        <label class="uk-form-label">Property Location</label>
+        <div class="uk-margin">
+            <select class="uk-select" name="Property Location">
+                <option value="Urban">Urban</option>
+                <option value="Semi-Urban">Semi-Urban</option>
+                <option value="Rural">Rural</option>
+            </select>
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" name="Co-Applicant" placeholder="Co-Applicant">
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" name="Property Price" placeholder="Property Price">
+        </div>
+
+
+
+
+
+        <!--div class="uk-margin">
+            <textarea class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
+        </div>
+
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+            <label><input class="uk-radio" type="radio" name="radio2" checked> A</label>
+            <label><input class="uk-radio" type="radio" name="radio2"> B</label>
+        </div>
+
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+            <label><input class="uk-checkbox" type="checkbox" checked> A</label>
+            <label><input class="uk-checkbox" type="checkbox"> B</label>
+        </div>
+
+        <div-- class="uk-margin">
+            <input class="uk-range" type="range" value="2" min="0" max="10" step="0.1">
+        </div-->
+
+
+            <button type="submit" class="uk-button uk-button-default">Submit</button>
+</form>
+    </div>
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/js/uikit-icons.min.js"></script></body>
+</html>
