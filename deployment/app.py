@@ -68,8 +68,8 @@ def predict():
     print(predictions)
 
     res = "Congrats! your loan has been approved" if predictions[0] != 0 else "Sorry, we can't provide a loan facility for you"
-
-    return render_template('results.html', prediction_text=predictions[0], results=res)
+    loan_amt =  int(predictions[0] * 75)
+    return render_template('results.html', prediction_text=str(loan_amt) + " Rupees", results=res)
 
 
 if __name__ == '__main__':
